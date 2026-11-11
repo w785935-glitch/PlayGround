@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#071b2b" />
+  <title>Sea of Legends — Islandbound</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell" aria-label="Sea of Legends game">
+    <canvas id="game" aria-label="Game world"></canvas>
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">✦</div><div><b>SEA OF LEGENDS</b><small>ISLANDBOUND</small></div></div>
+      <div class="player-chip"><div class="avatar-mini">✦</div><div><strong>Rookie Sailor</strong><small>LEVEL <span id="level">1</span></small></div></div>
+      <div class="top-actions"><button class="icon-btn" id="map-btn" aria-label="Map">⌖</button><button class="icon-btn" id="sound-btn" aria-label="Toggle sound">♫</button><button class="icon-btn" id="pause-btn" aria-label="Pause">Ⅱ</button></div>
+    </header>
+    <section class="hud-left">
+      <div class="status-card"><div class="stat-line"><span class="heart">♥</span><span>VITALITY</span><b id="hp-label">100 / 100</b></div><div class="meter"><i id="hp-fill"></i></div><div class="stat-line energy-line"><span class="energy-icon">✧</span><span>ENERGY</span><b id="energy-label">100 / 100</b></div><div class="meter energy"><i id="energy-fill"></i></div><div class="xp-label"><span>EXPERIENCE</span><b id="xp-label">0 / 100</b></div><div class="meter xp"><i id="xp-fill"></i></div></div>
+      <div class="quest-card"><div class="quest-head"><span class="quest-icon">⚑</span><div><small>ISLAND QUEST</small><b id="quest-title">Trouble on the shore</b></div></div><p id="quest-copy">Defeat 4 Shoreline Rogues</p><div class="quest-progress"><span id="quest-count">0 / 4</span><div class="meter"><i id="quest-fill"></i></div></div><button id="quest-btn" class="quest-btn">TRACK QUEST <span>↗</span></button></div>
+    </section>
+    <div class="location-pill"><span class="location-dot"></span><span id="location-name">PALM COVE</span><span class="location-divider">·</span><span id="weather">CLEAR SKIES</span></div>
+    <aside class="right-rail"><button class="rail-button active" id="inventory-btn"><span>▣</span><small>BAG</small></button><button class="rail-button" id="fruit-btn"><span>❋</span><small>POWERS</small></button><button class="rail-button" id="shop-btn"><span>◈</span><small>SHOP</small></button></aside>
+    <section class="bottom-ui">
+      <div class="hint"><span class="keycap">W A S D</span><span>MOVE</span><i></i><span class="keycap">SPACE</span><span>DASH</span><i></i><span class="keycap">CLICK / J</span><span>ATTACK</span></div>
+      <div class="hotbar"><div class="hotkey"><span class="slot-key">J</span><div class="slot-icon sword">⚔</div><small>STRIKE</small><div class="cooldown" id="attack-cd"></div></div><div class="hotkey power-slot" id="slot-z"><span class="slot-key">Z</span><div class="slot-icon fire">✹</div><small>EMBER BURST</small><div class="cooldown" id="z-cd"></div></div><div class="hotkey power-slot" id="slot-x"><span class="slot-key">X</span><div class="slot-icon wave">◉</div><small>TIDAL RING</small><div class="cooldown" id="x-cd"></div></div><div class="hotkey potion-slot" id="potion-btn"><span class="slot-key">Q</span><div class="slot-icon potion">♜</div><small>HEAL <span id="potion-count">2</span></small></div></div>
+    </section>
+    <div class="toast" id="toast"></div>
+    <div class="interaction" id="interaction"></div>
+    <div class="panel" id="panel"><button class="panel-close" id="panel-close">×</button><div id="panel-content"></div></div>
+    <div class="level-flash" id="level-flash"><span>✦</span><b>LEVEL UP!</b><small>YOUR LEGEND GROWS</small></div>
+    <div class="touch-controls"><div class="dpad"><button data-dir="up">▲</button><div><button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button></div></div><button class="touch-attack" id="touch-attack">⚔</button></div>
+    <div class="start-screen" id="start-screen"><div class="start-card"><div class="start-emblem">✦</div><div class="eyebrow">A NEW LEGEND BEGINS</div><h1>SEA OF<br><em>LEGENDS</em></h1><p>Set sail. Find your power. Become a legend.</p><button id="start-btn">ENTER THE ISLAND <span>→</span></button><small>WASD to move · Click or J to fight · Z / X to unleash powers</small></div><div class="start-footer">PALM COVE <span>◆</span> A WORLD OF YOUR OWN MAKING</div></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
